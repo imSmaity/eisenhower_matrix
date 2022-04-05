@@ -6,3 +6,12 @@
     padding: 3rem;
     font-size: 1.3rem;
 }
+
+ul li{
+    display: block;
+    background-color: rgba(173, 170, 170, 0.219);
+    border: 1px solid rgba(128, 128, 128, 0.548);
+    border-radius: .5rem;
+    padding: .6rem;
+    margin-top: .5rem;
+}
