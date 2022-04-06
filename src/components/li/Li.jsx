@@ -1,8 +1,8 @@
 import React from 'react'
 
 
-function Li({item}) {
-  return <li >{item}</li>;
+function Li({ref, item}) {
+  return <li ref={ref} >{item}</li>;
 }
 
 export default Li

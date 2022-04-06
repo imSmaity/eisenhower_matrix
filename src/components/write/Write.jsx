@@ -3,6 +3,19 @@ import { useDispatch } from 'react-redux'
 import { addToList } from '../../redux/actions'
 import './write.css'
 
+function getNewId(storageData,data){
+  if(storageData[data.option].length===0){
+    const INITIAL_ID=data.option+"D0001";
+    return INITIAL_ID
+  }
+  else{
+    const PREVIOUS_ID=storageData[data.option][storageData[data.option].length-1].id
+    const NEW_ID=`${data.option}D000${Number(PREVIOUS_ID[PREVIOUS_ID.length-1])+1}`
+    return NEW_ID;
+  }
+  
+}
+
 function Write() {
   const [data,setData]=useState({item:'',option:''})
   const dispatch=useDispatch()
@@ -14,7 +27,7 @@ function Write() {
   function addItem(){
     if(data.option!==''&&data.item!==''){
       const storageData=JSON.parse(sessionStorage.getItem('todo_2DO2'))
-      dispatch(addToList({...data,id:`${data.option}I000${storageData.section1.length+2}`}))
+      dispatch(addToList({...data,id: getNewId(storageData,data)}))
     }
   }
 

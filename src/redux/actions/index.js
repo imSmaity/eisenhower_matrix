@@ -7,3 +7,11 @@ export const addToList=(data)=>{
         payload:true
     }
 }
+
+export const editTheList=(items)=>{
+    return {
+        type:'editsection',
+        data:items,
+        payload:true
+    }
+}
