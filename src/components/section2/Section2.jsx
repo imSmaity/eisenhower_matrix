@@ -1,7 +1,6 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
 import './section2.css'
-import {Li} from '../index'
 import { Draggable } from 'react-beautiful-dnd'
 
 function Section2() {
